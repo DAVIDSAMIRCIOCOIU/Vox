@@ -6,7 +6,7 @@ const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const flash = require("connect-flash");
 const db = require("./api/database/mongoose-connection");
-const errorController = require('./controllers/error');
+const errorController = require('./api/controllers/error');
 
 const app = express();
 
