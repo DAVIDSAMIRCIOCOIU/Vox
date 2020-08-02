@@ -32,7 +32,7 @@ app.use(
 );
 
 // Use Routes
-app.use("/dictionary", dictionaryRoute);
+app.use("/", dictionaryRoute);
 
 db.connect();
 app.listen(process.env.PORT, () => {

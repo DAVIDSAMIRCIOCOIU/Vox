@@ -4,6 +4,6 @@ const dictionaryController = require("../controllers/dictionary")
 
 router.get("/", dictionaryController.getDictionaryHome);
 
-router.post("/", dictionaryController.getDictionaryWord);
+router.post("/dictionary", dictionaryController.getDictionaryWord);
 
 module.exports = router;
