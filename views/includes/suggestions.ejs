@@ -1,0 +1,12 @@
+<p class="dictionary-error">We couldn't find you word, but here are some suggestions:</p>
+
+<ul class="list-group">
+
+  <% data.forEach(suggestion => { %>
+  <li class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+      <p><b><%= suggestion %></b></p>
+    </div>
+  </li>
+  <% }) %>
+</ul>

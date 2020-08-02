@@ -1,13 +1,15 @@
 <ul class="list-group">
+  <% let counter = 1; %>
   <% data.forEach(word => { %>
     <li class="list-group-item">
-    <div class="d-flex w-100 justify-content-between mb-1">
-      <p class="mb-1"><b><%= word.hwi.hw %></b></p>
-      <small><%= word.fl %></small>
+    <div class="d-flex w-100 justify-content-start mb-1">
+     <p class="dictionary-counter mr-2 mb-0"><%= counter %></p>
+      <% counter++; %>
+      <p class="mb-0" id="word-title"><b><%= word.hwi.hw %></b></p>
     </div>
-    <p class="mb-1">Definitions:</p>
+    <small class="word-function"><%= word.fl %></small>
     <% word.shortdef.forEach(def => { %>
-    <p class="mb-1"><%= def %></p>
+    <p class="mb-0"><%= def %></p>
     <br />
     <% }) %>
     </li>

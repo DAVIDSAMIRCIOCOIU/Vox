@@ -1,17 +1,11 @@
 <nav class="navbar navbar-dark bg-primary mb-2">
   <a class="navbar-brand">Vox</a>
   <form class="form-inline" action="/dictionary" method="POST">
-    <div >
-      <input
-        class="form-control mr-sm-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        name="word"
-        id="word"
-      />
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-        <svg
+    <div class="input-group mr-sm-2mb-3">
+      <input type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2" name="word"
+      id="word">
+      <div class="input-group-append">
+        <button class="btn btn-info" type="submit" id="button-addon2"><svg
           width="1em"
           height="1em"
           viewBox="0 0 16 16"
@@ -27,8 +21,11 @@
             fill-rule="evenodd"
             d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
           />
-        </svg>
-      </button>
+        </svg></button>
+      </div>
     </div>
+
   </form>
 </nav>
+
+<!-- btn btn-outline-success my-2 my-sm-0 -->
