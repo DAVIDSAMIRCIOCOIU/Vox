@@ -4,6 +4,10 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+.search-bar {
+  width: 120px !important;
+}
+
 .dictionary-error {
   padding: 0.75rem 1.25rem;
 }
