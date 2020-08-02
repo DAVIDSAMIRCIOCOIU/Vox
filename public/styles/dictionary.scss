@@ -3,12 +3,21 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
 }
+
+.app-title {
+  font-weight: bold;
+}
 .search-bar{
   width: 120px !important;
 }
 
 .dictionary-error {
   padding: 0.75rem 1.25rem;
+}
+
+.word-pronunciation {
+  color: grey;
+  margin-left: 30px;;
 }
 
 .dictionary-counter {

@@ -5,8 +5,12 @@
     <div class="d-flex w-100 justify-content-start mb-1">
      <p class="dictionary-counter mr-2 mb-0"><%= counter %></p>
       <% counter++; %>
-      <p class="mb-0" id="word-title"><b><%= word.hwi.hw %></b></p>
+      <p class="mb-0 word-title"><b><%= word.hwi.hw %></b></p>
+     
     </div>
+    <% if( word.hwi.prs ) { %>
+      <p class="word-pronunciation mb-0"><%= word.hwi.prs[0].mw %></p>
+      <% } %>
     <small class="word-function"><%= word.fl %></small>
     <% word.shortdef.forEach(def => { %>
     <p class="mb-0"><%= def %></p>
