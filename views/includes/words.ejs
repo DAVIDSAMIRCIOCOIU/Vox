@@ -1,0 +1,15 @@
+<ul class="list-group">
+  <% data.forEach(word => { %>
+    <li class="list-group-item">
+    <div class="d-flex w-100 justify-content-between mb-1">
+      <p class="mb-1"><b><%= word.hwi.hw %></b></p>
+      <small><%= word.fl %></small>
+    </div>
+    <p class="mb-1">Definitions:</p>
+    <% word.shortdef.forEach(def => { %>
+    <p class="mb-1"><%= def %></p>
+    <br />
+    <% }) %>
+    </li>
+  <% }) %>
+</ul>
