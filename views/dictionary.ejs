@@ -12,7 +12,9 @@
 <%- include('./includes/words.ejs') %>
 <% } else if (type === "suggestion") {%>
 <%- include('./includes/suggestion.ejs') %>
-<% }%>
+<% } else { %>
+    <p>Start searching for a word.</p>
+    <% } %>
 
 </div>
         

@@ -6,6 +6,7 @@ const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const flash = require("connect-flash");
 const db = require("./api/database/mongoose-connection");
+const errorController = require('./controllers/error');
 
 const app = express();
 
@@ -33,7 +34,7 @@ app.use(
 
 // Use Routes
 app.use("/", dictionaryRoute);
-
+app.use(errorController.get404);
 db.connect();
 app.listen(process.env.PORT, () => {
   console.log("Server Started");
