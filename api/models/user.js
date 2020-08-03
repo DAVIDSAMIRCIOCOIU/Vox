@@ -41,10 +41,12 @@ userSchema.methods.getWords = function() {
 }
 
 userSchema.methods.removeWord = function(uuid) {
-    this.words.filter(w => {
-        w.uuid !== uuid;
-    })
-    this.save().then(result => {
+    let updatedWords = this.words.filter(w => {
+       return w.uuid != uuid;
+   });
+   this.words = updatedWords;
+    return this.save()
+    .then(result => {
         return Promise.resolve(result)
     })
     .catch(e => {

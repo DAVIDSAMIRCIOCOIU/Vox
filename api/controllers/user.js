@@ -1,7 +1,4 @@
 exports.getWords  =(req, res, next) => {
-    //query db for user words
-    // send back words
-    console.log(req.user.words)
     req.user.getWords()
     .then(words => {
         res.status(200).render("wordsList", {words: words});
@@ -13,8 +10,6 @@ exports.getWords  =(req, res, next) => {
 }
 
 exports.addWord  = (req, res, next) => {
-    //query db for user words
-    // send back words
     const word = {
         uuid: req.body.uuid,
         name: req.body.wordName,

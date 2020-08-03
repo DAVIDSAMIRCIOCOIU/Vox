@@ -7,6 +7,6 @@ router.get("/words", isAuth, userController.getWords);
 
 router.post("/add-word", isAuth, userController.addWord);
 
-router.delete("/add-word/:uuid", isAuth, userController.deleteWord);
+router.post("/delete/:uuid", isAuth, userController.deleteWord);
 
 module.exports = router;

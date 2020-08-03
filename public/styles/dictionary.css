@@ -60,6 +60,7 @@ body {
 
 .btn-delete {
   background-color: none;
+  padding-right: 0;
 }
 
 .btn-delete .delete-icon {

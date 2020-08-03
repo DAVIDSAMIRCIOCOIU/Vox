@@ -6,14 +6,13 @@
         <!-- item in list -->
         <% words.forEach(word => { %>
         <li class="list-group-item">
-          <div class="d-flex w-100 justify-content-between mb-0">
+          <div class="d-flex w-100 justify-content-between mb-0 ">
             <div class="d-flex justify-content-start word-title-group">
             <p class="mb-0 word-title"><b><%= word.name %></b></p>
             </div>
              <!-- Delete button -->
       <%if(isAuthenticated) {%>
-        <form action="/user/deleteWord" method="DELETE">
-          <input type="hidden" name="uuid" value="<%=word.uuid%>" />
+        <form action="/user/delete/<%=word.uuid%>" method="POST">
           <button type="submit" name="delete"  class="btn btn-delete">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle delete-icon" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
