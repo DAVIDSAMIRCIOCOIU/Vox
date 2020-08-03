@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+</head>
+<body>
+    <%- include('../includes/navbar.ejs') %>
+
+    <div class="container text-center auth-form">
+        <% if (errorMessage) { %>
+            <div class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>
+        <form class="mt-4 mb-4" action="/signup" method="POST">
+            <h3 class="mb-4">Sign up</h3>
+            <div class="form-group">
+                
+                <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="form-group">
+                
+                <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            </div>
+            <div class="form-group">
+                
+                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirm Password">
+            </div>
+            <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+        <a href="/login">Log in</a>
+    </div>
+
+    <%- include('../includes/footer.ejs') %>

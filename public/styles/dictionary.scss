@@ -36,3 +36,36 @@ body {
   font-weight: 200;
   font-style: oblique;
 }
+
+.word-title-group {
+  padding-top: 6px;
+}
+
+.btn-save {
+  background-color: none;
+  .save-icon {
+    color: #808080;
+    &:hover {
+      color: #017bfd;
+    }
+  }
+  
+  .save-active {
+    color: #017bfd;
+  }
+  
+}
+
+.btn-user {
+  background-color: none;
+  color: white;
+  border-radius: 50%;
+  &:hover {
+    background-color: #8080803a;
+    color: white;
+  }
+}
+
+.auth-form {
+  max-width: 330px;;
+}

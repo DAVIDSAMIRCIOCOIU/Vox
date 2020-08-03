@@ -24,7 +24,7 @@ exports.getDictionaryWord = (req, res, next) => {
         } else if (typeof response.data[0] == "string") {
           
           // found suggestions
-          return res.render("dictionary", { type: "suggestions", data: response.data });
+          return res.render("dictionary", { type: "suggestions", data: response.data});
         }
       } else if (typeof response.data == "string") {
         // error
