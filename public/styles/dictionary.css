@@ -58,6 +58,22 @@ body {
   color: #017bfd;
 }
 
+.btn-delete {
+  background-color: none;
+}
+
+.btn-delete .delete-icon {
+  color: #808080;
+}
+
+.btn-delete .delete-icon:hover {
+  color: #e20000;
+}
+
+.btn-delete .delete-active {
+  color: #e20000;
+}
+
 .btn-user {
   background-color: none;
   color: white;

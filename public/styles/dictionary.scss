@@ -53,7 +53,20 @@ body {
   .save-active {
     color: #017bfd;
   }
+}
+
+.btn-delete {
+  background-color: none;
+  .delete-icon {
+    color: #808080;
+    &:hover {
+      color: #e20000;
+    }
+  }
   
+  .delete-active {
+    color: #e20000;
+  }
 }
 
 .btn-user {

@@ -4,7 +4,6 @@ exports.getDictionaryHome = (req, res, next) => {
   res.render("dictionary", {type: null, data: null})
 };
 
-
 exports.getDictionaryWord = (req, res, next) => {
   // Get the word from the API
   // Make a request for a user with a given ID
@@ -15,12 +14,11 @@ exports.getDictionaryWord = (req, res, next) => {
     )
     /**Response might be given in 3 formats: error: string, incorrect word: [string], correct word: [{}] */
     .then(function (response) {
-      console.log(response.data)
       if (typeof response.data == "object") {
         // found a word or suggestions
         if (typeof response.data[0] == "object") {
           // found words
-          return res.render("dictionary", { type: "words", data: response.data });
+          return res.render("dictionary", { type: "words", data: response.data, searchedWord: req.body.word});
         } else if (typeof response.data[0] == "string") {
           
           // found suggestions

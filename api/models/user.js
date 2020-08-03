@@ -10,17 +10,46 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     words: [{
-        wordId: {type: mongoose.Schema.Types.ObjectId, ref: "Word", required: true},
-        name: {type: String}
+        uuid: {type: String, required: true},
+        name: {type: String, required: true},
+        function: {type: String},
+        def:[{ type: String}]
     }]
 });
 
 userSchema.methods.addWord = function(word) {
 // check if word exists if not add, else do not add
+    return new Promise((resolve, reject) => {
+        let err = false;
+        this.words.forEach(w => {
+            if(w.uuid == word.uuid) {
+                err = true;
+               reject(new Error ("Couldn't add word."));
+            }
+        });
+        if(!err) {
+            this.words.push(word);
+        this.save().then(result => {
+            resolve(result)
+        });
+        } 
+    })
 }
 
-userSchema.methods.removeWord = function(word) {
+userSchema.methods.getWords = function() {
+    return Promise.resolve(this.words);
+}
 
+userSchema.methods.removeWord = function(uuid) {
+    this.words.filter(w => {
+        w.uuid !== uuid;
+    })
+    this.save().then(result => {
+        return Promise.resolve(result)
+    })
+    .catch(e => {
+        return Promise.reject(e)
+    })
 }
 
 module.exports = mongoose.model('User', userSchema);
