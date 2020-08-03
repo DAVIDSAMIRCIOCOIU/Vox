@@ -4,8 +4,8 @@ const router = express.Router();
 const isAuth = require("../../middleware/is-auth");
 
 
-router.get("/words", isAuth, userController.getWords);
+router.get("/user/words", isAuth, userController.getWords);
 
-router.post("/add-word", isAuth, userController.addWord);
+router.post("/user/add-word", isAuth, userController.addWord);
 
 module.exports = router;

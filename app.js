@@ -21,6 +21,7 @@ app.set("view engine", "ejs");
 // Require Routes
 const dictionaryRoute = require("./api/routes/dictionary");
 const authRoutes = require('./api/routes/auth');
+const userRoutes = require("./api/routes/user")
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("public"));
@@ -55,6 +56,7 @@ app.use((req, res, next) => {
 // Use Routes
 app.use("/", dictionaryRoute);
 app.use(authRoutes);
+app.use(userRoutes);
 app.use(errorController.get404);
 
 db.connect();
